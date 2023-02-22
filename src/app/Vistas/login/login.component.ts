@@ -14,27 +14,33 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  
-  
+
+
   loginForm = new FormGroup({
-    email : new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    email : new FormControl('test1@idat.com', Validators.required),
+    password: new FormControl('test', Validators.required)
   })
 
   constructor( private api:ApiService, private router:Router ){
 
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
   }
 
   onLogin(form:  any){
-     this.api.loginByEmail(form.value).subscribe({
-      next: (rs) => {
-        console.log(rs);
+     this.api.loginByEmail(form.value)
+     .subscribe({
+      next: data => {
+        let dataResponse: ResponseI = data;
+        console.log(data)
+        localStorage.setItem("token", dataResponse.token);
+        this.router.navigate(['menu'])
       },
-      error: (err) => {
-        console.log(err);
+      error: error => {
+        const failed = error.error;
+        console.error('There was an error!');
+        console.log(failed);
       }
      })
   //console.log(form.value)
@@ -46,11 +52,11 @@ export class LoginComponent implements OnInit {
   //   }
   // })
 
-    let dataResponse:ResponseI = form;
-    if(dataResponse.status == "ok"){
-      localStorage.setItem("token", dataResponse.result.token);
-      this.router.navigate(['menu'])
-    }
+    // let dataResponse:ResponseI = form;
+    // if(dataResponse.status == "ok"){
+    //   localStorage.setItem("token", dataResponse.result.token);
+    //   this.router.navigate(['menu'])
+    // }
 
  }
 
