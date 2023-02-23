@@ -5,9 +5,10 @@ import { MenuComponent } from './Vistas/menu/menu.component';
 
 const routes: Routes = [
 
-  {path:'' , redirectTo:'login', pathMatch:'full'},
-  {path: 'login', component:LoginComponent},
-  {path: 'menu', component:MenuComponent}
+  {path:'' , redirectTo:'menu', pathMatch:'full'},
+  {path: 'menu', component:MenuComponent},
+  {path: 'login', component:LoginComponent}
+  
 
 ];
 
