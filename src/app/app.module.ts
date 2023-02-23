@@ -7,7 +7,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 
 import { ReactiveFormsModule, FormsModule } from  '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { LoginComponent } from './Vistas/login/login.component';
 //import { MenuComponent } from './Vistas/menu/menu.component';
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    routingComponents
+    routingComponents,
+    CategoriaComponent
     //LoginComponent,
     //MenuComponent
   ],
