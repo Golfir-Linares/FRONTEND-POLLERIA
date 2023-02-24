@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  
+
+  
+  // ng g s servicios/usuario --skip-tests 
+  //
+  //ng g s servicios/categoria/categoria --skip-tests
 }
