@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoginI } from '../../Modelos/login.interface';
-import { ResponseI } from '../../Modelos/response.interface';
+import { ResponseTrueI } from '../../Modelos/logintrue.interface';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -16,7 +16,7 @@ export class ApiService {
 
   loginByEmail(form:LoginI){
     const direccion: string = `${this.url}/users/signin`;
-    return this.http.post<ResponseI>(direccion,form);
+    return this.http.post<ResponseTrueI>(direccion,form);
   }
 
   

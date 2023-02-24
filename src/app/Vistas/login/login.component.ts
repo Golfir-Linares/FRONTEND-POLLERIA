@@ -1,63 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../../Servicios/api/api.service';
-import { LoginI } from '../../Modelos/login.interface';
-import { ResponseI } from '../../Modelos/response.interface';
+import { ResponseTrueI } from '../../Modelos/logintrue.interface';
+import { ResponseFalseI } from 'src/app/Modelos/loginfalse.interface';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-
-
   loginForm = new FormGroup({
-    email : new FormControl('test1@idat.com', Validators.required),
-    password: new FormControl('test', Validators.required)
-  })
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+  });
 
-  constructor( private api:ApiService, private router:Router ){
+  constructor(private api: ApiService, private router: Router, private toastr: ToastrService) {}
 
-  }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  onLogin(form:  any){
-     this.api.loginByEmail(form.value)
+  onLogin(form: any) {
+    this.api.loginByEmail(form.value)
      .subscribe({
       next: data => {
-        let dataResponse: ResponseI = data;
+        let dataResponse: ResponseTrueI = data;
         console.log(data)
         localStorage.setItem("token", dataResponse.token);
         this.router.navigate(['menu'])
       },
       error: error => {
         const failed = error.error;
-        console.error('There was an error!');
-        console.log(failed);
+        let dataResponse: ResponseFalseI = failed;
+        //console.error('There was an error!');
+        console.log(dataResponse.msg);
+        this.toastr.error(dataResponse.msg, "Error");
       }
      })
-  //console.log(form.value)
-  // this.api.loginByEmail(form).subscribe(data =>{
-  //   let dataResponse:ResponseI = data;
-  //   if(dataResponse.status == "ok"){
-  //     localStorage.setItem("token",dataResponse.result.token);
-  //     this.router.navigate(['menu'])
-  //   }
-  // })
+    /*console.log(form.value);
+    this.api.loginByEmail(form).subscribe((data) => {
+      let dataResponse: ResponseI = data;
+      if (dataResponse.status == 'ok') {
+        localStorage.setItem('token', dataResponse.result.token);
+        this.router.navigate(['menu']);
+      }
+    });
 
-    // let dataResponse:ResponseI = form;
-    // if(dataResponse.status == "ok"){
-    //   localStorage.setItem("token", dataResponse.result.token);
-    //   this.router.navigate(['menu'])
-    // }
+    let dataResponse: ResponseI = form;
+    if (dataResponse.status == 'ok') {
+      localStorage.setItem('token', dataResponse.result.token);
+      this.router.navigate(['menu']);
+    }*/
 
- }
 
+  }
 }

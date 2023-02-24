@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { LoginComponent } from './Vistas/login/login.component';
 //import { MenuComponent } from './Vistas/menu/menu.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,13 @@ import { CategoriaComponent } from './Vistas/categoria/categoria.component'
     AppRoutingModule,
     ReactiveFormsModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      progressBar:true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

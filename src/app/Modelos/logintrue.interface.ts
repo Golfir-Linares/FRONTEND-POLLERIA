@@ -1,4 +1,4 @@
-export interface ResponseI{
+export interface ResponseTrueI{
     status: boolean;
     token: string;
 }
