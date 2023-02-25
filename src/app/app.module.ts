@@ -13,6 +13,7 @@ import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { MenuComponent } from './Vistas/menu/menu.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainComponent } from './Vistas/main/main.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     routingComponents,
-    CategoriaComponent
+    CategoriaComponent,
+    MainComponent
     //LoginComponent,
     //MenuComponent
   ],
