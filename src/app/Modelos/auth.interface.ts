@@ -3,6 +3,11 @@ export interface AuthResponse{
     status: boolean;
   }
 
+export interface AuthError{
+    msg: string;
+    status: boolean;
+  }
+  
 export interface SingupInterface {
     msg:  string;
     data: Data;

@@ -11,9 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { LoginComponent } from './Vistas/login/login.component';
 //import { MenuComponent } from './Vistas/menu/menu.component';
+//import { SingupComponent } from './Vistas/singup/singup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainComponent } from './Vistas/main/main.component';
+
 
 @NgModule({
   declarations: [
@@ -21,8 +22,8 @@ import { MainComponent } from './Vistas/main/main.component';
     HeaderComponent,
     FooterComponent,
     routingComponents,
-    CategoriaComponent,
-    MainComponent
+    CategoriaComponent
+    //SingupComponent
     //LoginComponent,
     //MenuComponent
   ],

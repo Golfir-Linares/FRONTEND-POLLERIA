@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../Servicios/api/api.service';
-import { ResponseTrueI } from '../../Modelos/logintrue.interface';
-import { ResponseFalseI } from 'src/app/Modelos/loginfalse.interface';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthResponse } from 'src/app/Modelos/auth.interface';
+import { AuthResponse, AuthError } from 'src/app/Modelos/auth.interface';
 
 
 @Component({
@@ -51,7 +49,9 @@ export class LoginComponent implements OnInit {
             })
         },
         error: (err) => {
-          console.log(err)
+          console.log(err);
+          let errorResponse: AuthError = err.error;
+          this.toastr.error(errorResponse.msg, "Error");
           localStorage.clear();
         }
       })
