@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../Servicios/api/api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  constructor(private fb: FormBuilder ,private api: ApiService, private router: Router, private toastr: ToastrService) {}
+  constructor(private fb: FormBuilder, private api: ApiService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {}
 

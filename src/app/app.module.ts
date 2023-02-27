@@ -14,13 +14,10 @@ import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { SingupComponent } from './Vistas/singup/singup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import { MainComponent } from './Vistas/main/main.component';
+import { ConfirmComponent } from './Vistas/confirm/confirm.component';
+import { ForgetpassComponent } from './Vistas/forgetpass/forgetpass.component';
+import { ChangepassComponent } from './Vistas/changepass/changepass.component';
 import { filterPipe } from './Pipe/filter.pipe';
-
-=======
->>>>>>> 2f5c2ca3823ea2bae0827798ccd034deab811f0f
-
 
 @NgModule({
   declarations: [
@@ -29,7 +26,10 @@ import { filterPipe } from './Pipe/filter.pipe';
     FooterComponent,
     filterPipe,
     routingComponents,
-    CategoriaComponent
+    CategoriaComponent,
+    ConfirmComponent,
+    ForgetpassComponent,
+    ChangepassComponent
     //SingupComponent
     //LoginComponent,
     //MenuComponent

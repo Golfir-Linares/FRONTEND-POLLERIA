@@ -7,11 +7,39 @@ export interface AuthError{
     msg: string;
     status: boolean;
   }
+
+export interface ConfirmResponse{
+   msg: string;
+  }
   
-export interface SingupInterface {
+export interface SignupInterface {
     msg:  string;
     data: Data;
   }
+
+export interface ForgetPassResponse {
+    msg:  string;
+    data: string;
+  }
+
+export interface VerifyRecoverTokenResponse {
+    msg:  string;
+    data: Data;
+  }
+
+export interface ChangePassResponse {
+    msg:  string;
+    data: Data;
+  }
+
+export interface RegisterData {
+  name:           string;
+  lastname:       string;
+  documentType:   string;
+  documentNumber: string;
+  email:          string;
+  password:       string;
+}
   
 export interface Data {
     name:           string;

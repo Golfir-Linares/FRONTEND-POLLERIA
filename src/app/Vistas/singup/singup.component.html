@@ -4,43 +4,43 @@
             <form class="login100-form" autocomplete="off" [formGroup]="registerForm" (ngSubmit)="register()">
 
                 <span class="login100-form-title p-b-49">
-                    Singup
+                    Crear cuenta
                 </span>
 
                 <div class="wrap-input100 m-b-23">
-                    <span class="label-input100">Name</span>
-                    <input class="input100" type="text" formControlName="name" name="email"
-                        placeholder="Send your name">
+                    <span class="label-input100">Nombre</span>
+                    <input class="input100" type="text" formControlName="name" name="name"
+                        placeholder="Ingresa tu Nombre">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 m-b-23">
-                    <span class="label-input100">Lastname</span>
-                    <input class="input100" type="text" formControlName="lastname" name="email"
-                        placeholder="Send your lastname">
+                    <span class="label-input100">Apellido</span>
+                    <input class="input100" type="text" formControlName="lastname" name="lastname"
+                        placeholder="Ingresa tu Apellido">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 m-b-23">
                     <span class="label-input100">Email</span>
                     <input class="input100" type="email" formControlName="email" name="email"
-                        placeholder="Send your email">
+                        placeholder="Ingresa tu email">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 m-b-23">
-                    <span class="label-input100">Document Type</span>
+                    <span class="label-input100">Tipo de Documento</span>
                     <input class="input100" type="text" formControlName="documentType" name="documentType"
-                        placeholder="Choose your document type">
+                        placeholder="Elige tu Tipo de Documento">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 m-b-23">
-                    <span class="label-input100">Document Number</span>
-                    <input class="input100" type="text" formControlName="documentNumber" name="documentType"
-                        placeholder="Send your document number">
+                    <span class="label-input100">Número de Documento</span>
+                    <input class="input100" type="text" formControlName="documentNumber" name="documentNumber"
+                        placeholder="Ingresa tu Número de Documento">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100">
                     <span class="label-input100">Password</span>
                     <input class="input100" type="password" formControlName="password" name="password"
-                        placeholder="Put your password">
+                        placeholder="Ingresa tu password">
                     <span class="focus-input100"></span>
                 </div>
 
@@ -50,18 +50,18 @@
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
                         <button class="login100-form-btn" [disabled]="registerForm.invalid">
-                            Register
+                            Registrar
                         </button>
                     </div>
                 </div>
 
                 <div class="flex-col-c p-t-60">
                     <span class="txt1 p-b-17">
-                        ¿Do you have a account?
+                        ¿Ya tienes una cuenta?
                     </span>
 
                     <a routerLink="/login" class="txt2">
-                        Singin here
+                        Inicia sesión aquí
                     </a>
                 </div>
             </form>

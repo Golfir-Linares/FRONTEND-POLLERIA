@@ -1,10 +1,10 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('../../../../assets/images/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form class="login100-form" autocomplete="off" [formGroup]="miForm" (ngSubmit)="login()">
+            <form class="login100-form" autocomplete="off" [formGroup]="miForm" (ngSubmit)="recoverUser()">
 
                 <span class="login100-form-title p-b-49">
-                    Iniciar Sesión
+                    Recuperar Usuario
                 </span>
 
                 <div class="wrap-input100 m-b-23">
@@ -14,23 +14,11 @@
                     <span class="focus-input100"></span>
                 </div>
 
-                <div class="wrap-input100">
-                    <span class="label-input100">Password</span>
-                    <input class="input100" type="password" formControlName="password" name="password"
-                        placeholder="Ingrese su Password">
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="flex-col-c p-1 m-b-5">
-                    <a routerLink="/recover" class="txt1 p-1">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-                </div> 
-
                 <div class="container-login100-form-btn">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
                         <button type="submit" [disabled]="miForm.invalid" class="login100-form-btn">
-                            Ingresar
+                            Buscar Usuario
                         </button>
                     </div>
                 </div>

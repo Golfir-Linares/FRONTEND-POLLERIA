@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div class="banner">
+</div>
+
+<!-- ========== 
+    
+<div class="container">
+  <div *ngIf="error_msg.length == 0" class="alert alert-success text-center" style="font-size: 10em">
+        <i class="bi bi-check-circle"></i>
+        <p>Registro completado: "{{resp_msg}}"</p>
+    </div>
+    <div *ngIf="error_msg.length > 0" class="alert alert-danger text-center" style="font-size: 10em">
+        <i class="bi bi-x-circle-fill"></i>
+        <p>Error: "{{error_msg}}"</p>
+    </div>
+</div>
+    
+    ========== -->
+
+<div class="container py-5">
+    <!-- This card needs Bootstrap 4 Beta to work. -->
+    <!-- Don't forget to copy small-card.css file too! -->
+
+    <div *ngIf="error_msg.length == 0" class="card card-custom bg-white border-white">
+        <div class="card-custom-img"
+        style="background-image: url(../../../../assets/images/nanosbg.jpg);"
+>
+        </div>
+        <div class="card-custom-avatar">
+            <img class="img-fluid"
+                src="../../../../assets/images/nanoshd.jpg"
+                alt="Avatar" />
+        </div>
+        <div class="card-body text-center" style="overflow-y: auto">
+            <i class="bi bi-check-circle text-success" style="font-size: 7em"></i>
+            <p class="h1">Usuario encontrado: "{{resp_user}}"</p>
+        </div>
+
+        <div class="m-auto wrap-login100 pt-2 pb-5">
+            <form class="login100-form" autocomplete="off" [formGroup]="miForm" (ngSubmit)="changePass()">
+
+                <div class="wrap-input100">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" formControlName="password" name="password"
+                        placeholder="Ingrese su Password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="text-right py-3"></div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button type="submit" [disabled]="miForm.invalid" class="login100-form-btn">
+                            Cambiar Contraseña
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        
+    </div>
+
+    <div *ngIf="error_msg.length > 0" class="card card-custom bg-white border-white">
+        <div class="card-custom-img"
+            style="background-image: url(../../../../assets/images/nanosbg.jpg);"
+>
+        </div>
+        <div class="card-custom-avatar">
+            <img class="img-fluid"
+                src="../../../../assets/images/nanoshd.jpg"
+                alt="Avatar" />
+        </div>
+        <div class="card-body text-center" style="overflow-y: auto">
+            <i class="bi bi-x-circle-fill text-danger" style="font-size: 7em"></i>
+            <p class="h1">Error: "{{error_msg}}"</p>
+        </div>
+    </div>
+
+</div>
