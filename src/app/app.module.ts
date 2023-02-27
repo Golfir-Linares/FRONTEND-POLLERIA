@@ -14,6 +14,9 @@ import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { SingupComponent } from './Vistas/singup/singup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmComponent } from './Vistas/confirm/confirm.component';
+import { ForgetpassComponent } from './Vistas/forgetpass/forgetpass.component';
+import { ChangepassComponent } from './Vistas/changepass/changepass.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     routingComponents,
-    CategoriaComponent
+    CategoriaComponent,
+    ConfirmComponent,
+    ForgetpassComponent,
+    ChangepassComponent
     //SingupComponent
     //LoginComponent,
     //MenuComponent
