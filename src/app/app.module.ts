@@ -11,11 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 //import { LoginComponent } from './Vistas/login/login.component';
 //import { MenuComponent } from './Vistas/menu/menu.component';
+//import { SingupComponent } from './Vistas/singup/singup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { MainComponent } from './Vistas/main/main.component';
 import { filterPipe } from './Pipe/filter.pipe';
 
+=======
+>>>>>>> 2f5c2ca3823ea2bae0827798ccd034deab811f0f
 
 
 @NgModule({
@@ -25,8 +29,8 @@ import { filterPipe } from './Pipe/filter.pipe';
     FooterComponent,
     filterPipe,
     routingComponents,
-    CategoriaComponent,
-    MainComponent
+    CategoriaComponent
+    //SingupComponent
     //LoginComponent,
     //MenuComponent
   ],
