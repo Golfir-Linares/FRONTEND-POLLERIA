@@ -17,6 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmComponent } from './Vistas/confirm/confirm.component';
 import { ForgetpassComponent } from './Vistas/forgetpass/forgetpass.component';
 import { ChangepassComponent } from './Vistas/changepass/changepass.component';
+<<<<<<< HEAD
+import { MainComponent } from './Vistas/main/main.component';
+import { filterPipe } from './Pipe/filter.pipe';
+
+=======
+>>>>>>> 2f5c2ca3823ea2bae0827798ccd034deab811f0f
 
 
 @NgModule({
@@ -24,6 +30,7 @@ import { ChangepassComponent } from './Vistas/changepass/changepass.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    filterPipe,
     routingComponents,
     CategoriaComponent,
     ConfirmComponent,
