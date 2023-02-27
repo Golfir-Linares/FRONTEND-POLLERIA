@@ -14,12 +14,16 @@ import { CategoriaComponent } from './Vistas/categoria/categoria.component'
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './Vistas/main/main.component';
+import { filterPipe } from './Pipe/filter.pipe';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    filterPipe,
     routingComponents,
     CategoriaComponent,
     MainComponent

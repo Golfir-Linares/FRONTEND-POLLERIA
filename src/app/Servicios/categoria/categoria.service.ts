@@ -12,7 +12,7 @@ export class CategoriaService {
 
   getAllCategoria(){
     const direccion: string = `${this.url}/category/getCategories`;
-    return this.http.get<CategoI>(direccion);
+    return this.http.get<CategoI[]>(direccion);
   }
 }
 
