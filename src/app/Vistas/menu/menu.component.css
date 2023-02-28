@@ -1,12 +1,12 @@
-/* .banner{
+ .banner{
     position: relative;
-    background: url(../../../assets/IMG/banes.gif);
+    background: url(../../../assets/images/banes.gif);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;  
-} */
+} 
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 *{
