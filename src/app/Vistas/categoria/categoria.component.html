@@ -24,7 +24,7 @@
             
             <div class="card-body  ">
               <h5 class="card-title">{{data.description}}</h5>
-              <button type="button" class="btn btn-outline-success">Ver platos</button>
+              <button type="button" class="btn btn-outline-success" [routerLink]="['/carta', data.description]" >Ver platos</button>
             </div>  
           </div>
       </div>
