@@ -24,21 +24,16 @@ export class ForgetpassComponent implements OnInit {
   ngOnInit(): void {}
 
   recoverUser(){
-    console.log(this.miForm.value);
     const { email } = this.miForm.value;
-    //localStorage.setItem('auto_email', email);
     this.api.recoverUser(email)
       .subscribe({
         next: (resp: ForgetPassResponse) => {
-          console.log(resp);
-          console.log(resp.data);
-          
           localStorage.setItem('token', resp.data);
           localStorage.setItem('user_token', resp.data);
           localStorage.setItem('new_user_token', resp.data);
           this.token = resp.data;
           let url_confirmación = "http://localhost:4200/verify/"+this.token;
-          console.log(url_confirmación);
+          this.api.sendMail(email, "Cambiar contraseña:", "Está a un paso de poder cambiar su contraseña", url_confirmación).subscribe();
           this.toastr.success(resp.msg, "Success");
         },
         error: (err) => {

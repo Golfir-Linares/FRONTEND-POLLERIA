@@ -8,7 +8,6 @@ import { ConfirmComponent } from './Vistas/confirm/confirm.component';
 import { ForgetpassComponent } from './Vistas/forgetpass/forgetpass.component';
 import { ChangepassComponent } from './Vistas/changepass/changepass.component';
 import { EnsaladasComponent } from './Vistas/cartas/ensaladas/ensaladas.component';
-
 import { PollosComponent } from './Vistas/cartas/pollos/pollos.component';
 import { PromocionesComponent } from './Vistas/cartas/promociones/promociones.component';
 import { SaltadosComponent } from './Vistas/cartas/saltados/saltados.component';
