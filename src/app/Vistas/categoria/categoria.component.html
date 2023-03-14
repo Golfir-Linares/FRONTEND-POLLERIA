@@ -1,6 +1,8 @@
 <app-header></app-header>
-
 <br>
+<section class="content_section">
+
+</section>
 <div class="container">
     <p>
         <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
@@ -16,11 +18,14 @@
           </div>
         </div>
       </div>
-      <div class="container text-center ">
-        <div class="card " *ngFor="let data of categoria | filter:nombrecategoria " style="width: 18rem; ">
-            <img src="assets/images/CATEGORIA/Pollos/combinado-familiar.jpg" class="card-img-top" alt="...">
+      <div class="container text-center card-columns">
+        <div class="card" *ngFor="let data of categoria | filter:nombrecategoria" style="width: 18rem; ">
+            <img [src]="data.imgUrl" class="card-img-top" alt="...">
+            
             <div class="card-body  ">
               <h5 class="card-title">{{data.description}}</h5>
+              <button type="button" class="btn btn-outline-success" [routerLink]="['/carta', data.description]" >Ver platos</button>
             </div>  
-    </div>
+          </div>
+      </div>
 </div>

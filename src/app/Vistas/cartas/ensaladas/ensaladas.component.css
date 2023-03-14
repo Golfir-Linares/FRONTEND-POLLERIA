@@ -1,27 +1,9 @@
- .banner{
-    position: relative;
-    background: url(../../../assets/images/banes.gif);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 100vh;
-	
-} 
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-/*Cards*/
 .container-card{
 	width: 100%;
 	display: flex;
-	max-width: 1100px;
+	max-width: 500px;
 	margin: auto;
+    margin-top: 100px;
 }
 .title-cards{
 	width: 100%;
@@ -79,12 +61,3 @@
 	background: #00833e;
 	color: #fed925;
 }
-@media only screen and (min-width:320px) and (max-width:768px){
-	.container-card{
-		flex-wrap: wrap;
-	}
-	.card{
-		margin: 15px;
-	}
-}
-/*Fin-Cards*/

@@ -4,6 +4,7 @@ export interface CategoI {
     state:       boolean;
     createdAt:   Date;
     updatedAt:   Date;
+    imgUrl:      string;
     slug:        string;
     __v:         number;
 }

@@ -1,25 +1,18 @@
 <app-header></app-header>
 
-<div class="banner">
-</div>
-<!--   Tarjetas-->
-<div class="title-cards">
-    <h2>Algunos de nuestros Platos</h2>
-</div>
 <div class="container-card">
 
-    <div class="card" *ngFor="let data of menu" >
+    <div class="card" *ngFor="let data of pollo" >
         <figure>
             <img [src]="data.imgUrl">
         </figure>
         <div class="contenido-card">
-            <h3></h3>
-            <p></p>
+            <h3>{{data.name}}</h3>
+            <p>{{data.price}}</p>
             <br>
-            <p></p>
+            <p>{{data.description}}</p>
+            <p>{{data.category.name}}</p>
             <a href="/categoria">Ver mas</a>
         </div>
     </div> 
 </div>
-
-<app-footer></app-footer>

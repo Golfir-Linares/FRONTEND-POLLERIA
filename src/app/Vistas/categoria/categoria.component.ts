@@ -12,6 +12,8 @@ export class CategoriaComponent implements OnInit {
 
   categoria:CategoI [] = [];
   nombrecategoria:string=''
+  filtercategoria?:string
+
 
   constructor(private api:CategoriaService, private router:Router){}
   ngOnInit():void{
@@ -19,6 +21,7 @@ export class CategoriaComponent implements OnInit {
       .subscribe(rs => {
         console.log(rs);
         this.categoria=rs
+        //this.nombrecategoria=rs[0].description
       })
   }
 }
