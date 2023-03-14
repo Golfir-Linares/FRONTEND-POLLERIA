@@ -27,22 +27,18 @@ export class SingupComponent {
   constructor(private fb: FormBuilder, private api: ApiService, private router: Router, private toastr: ToastrService) { }
 
   register(){
-    console.log(this.registerForm.value);
     const { name, lastname, email, documentType, documentNumber, password } = this.registerForm.value;
-    //console.log(name, lastname, email, documentType, documentNumber, password);
+    let url_confirmación = "";
     this.api.register(name, lastname, email, documentType, documentNumber, password)
       .subscribe({
         next: (resp: SignupInterface) => {
-          console.log(resp);
           localStorage.setItem('user_token', resp.data.token);
           this.user_token = resp.data.token;
-          let url_confirmación = "http://localhost:4200/confirm/"+this.user_token;
-          console.log(url_confirmación);
-          //this.router.navigateByUrl('/confirm/'+this.user_token);
+          url_confirmación = "http://localhost:4200/confirm/"+this.user_token;
+          this.api.sendMail(email, "Confirmación de usuario:", "Está a solo un paso de confirmar su cuenta", url_confirmación).subscribe();
           this.toastr.success(resp.msg, "Success");
         },
         error: (err) => {
-          console.log(err);
           let errorResponse: SignupInterface = err.error;
           this.toastr.error(errorResponse.msg, "Error");
           console.log(errorResponse.msg)

@@ -53,5 +53,9 @@ export class ApiService {
     return this.http.get<ProfileInterface>(url, { headers: headers });
   }
   
+  sendMail(destinatario: string, asunto: string, mensaje: string, link: string){
+    const url: string = `${this.url}/mail/enviar-email`;
+    return this.http.post(url,{ destinatario, asunto, mensaje, link })
+  }
 
 }
