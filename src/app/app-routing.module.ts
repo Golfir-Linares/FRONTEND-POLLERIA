@@ -12,11 +12,12 @@ import { PollosComponent } from './Vistas/cartas/pollos/pollos.component';
 import { PromocionesComponent } from './Vistas/cartas/promociones/promociones.component';
 import { SaltadosComponent } from './Vistas/cartas/saltados/saltados.component';
 import { ChaufaComponent } from './Vistas/cartas/chaufa/chaufa.component';
+import { CarritoComponent } from './Vistas/carrito/carrito.component';
 
 
 const routes: Routes = [
 
-  {path:'' , redirectTo:'menu', pathMatch:'full'},
+  {path:'' , redirectTo:'menu', pathMatch:'full',},
   {path: 'menu', component:MenuComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:SingupComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'carta/Promociones',component:PromocionesComponent},
   {path: 'carta/Saltados',component:SaltadosComponent},
   {path: 'confirm/:user_token', component: ConfirmComponent },
-  {path: 'verify/:new_user_token', component: ChangepassComponent }
+  {path: 'verify/:new_user_token', component: ChangepassComponent },
+  {path: 'carrito', component:CarritoComponent}
 
 ];
 

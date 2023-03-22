@@ -1,9 +1,9 @@
 .container-card{
 	width: 100%;
 	display: flex;
-	max-width: 500px;
 	margin: auto;
     margin-top: 100px;
+	justify-content: center;
 }
 .title-cards{
 	width: 100%;
@@ -15,7 +15,7 @@
 	color: #7a7a7a;
 }
 .card{
-	width: 100%;
+	width: 18%;
 	margin: 20px;
 	border-radius: 6px;
 	overflow: hidden;

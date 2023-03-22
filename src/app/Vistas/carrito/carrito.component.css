@@ -61,3 +61,12 @@
 	background: #00833e;
 	color: #fed925;
 }
+
+.delete-btn {
+    cursor:pointer;
+    font-weight: bolder;
+    font-size: 1.2em;
+    position:absolute;
+    right: 5px;
+    top: 5px;
+  }

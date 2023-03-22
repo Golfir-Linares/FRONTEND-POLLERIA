@@ -19,7 +19,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 10px 0px;
+    padding: 5px 0px;
 
 }
 
@@ -33,7 +33,7 @@ header{
     height: 130px; */
     border: 2px solid #f29501; 
     /* float: right;  */
-    width: 70px;
+    width: 80px;
 
 }
 
@@ -76,7 +76,7 @@ header{
 .content_nav li{
 
     display: inline-block;
-    padding-right: 10px;
+    padding: 10px;
 
 }
 
@@ -85,7 +85,7 @@ header{
     text-decoration: none;
     color: #f89107;
     position: relative;
-    font-size: 25px;
+    font-size: 15px;
     letter-spacing: 0.25em;
     
     

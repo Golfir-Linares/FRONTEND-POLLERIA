@@ -23,6 +23,7 @@ import { SaltadosComponent } from './Vistas/cartas/saltados/saltados.component';
 import { PollosComponent } from './Vistas/cartas/pollos/pollos.component';
 import { PromocionesComponent } from './Vistas/cartas/promociones/promociones.component';
 import { ChaufaComponent } from './Vistas/cartas/chaufa/chaufa.component';
+import { CarritoComponent } from './Vistas/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ChaufaComponent } from './Vistas/cartas/chaufa/chaufa.component';
     SaltadosComponent,
     PollosComponent,
     PromocionesComponent,
-    ChaufaComponent
+    ChaufaComponent,
+    CarritoComponent
     //SingupComponent
     //LoginComponent,
     //MenuComponent

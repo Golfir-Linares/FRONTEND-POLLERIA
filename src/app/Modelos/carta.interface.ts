@@ -1,4 +1,5 @@
 export interface CartaI {
+    _id:         string;
     category:    Category;
     name:        string;
     price:       number;

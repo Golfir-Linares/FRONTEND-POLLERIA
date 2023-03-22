@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CartaI } from 'src/app/Modelos/carta.interface';
+import { CarritoService } from 'src/app/Servicios/carta/carrito.service';
 import { PromocionesService } from 'src/app/Servicios/carta/promociones.service';
 
 @Component({
@@ -9,9 +10,16 @@ import { PromocionesService } from 'src/app/Servicios/carta/promociones.service'
   styleUrls: ['./promociones.component.css']
 })
 export class PromocionesComponent implements OnInit {
+
   promociones:CartaI []=[];
 
-  constructor(private api:PromocionesService, private router:Router){}
+  constructor(private api:PromocionesService, private carritoService:CarritoService, private router:Router){
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
   
   ngOnInit(): void {
     this.api.getAllPromociones()
@@ -21,6 +29,8 @@ export class PromocionesComponent implements OnInit {
     })
   }
 
+  addCarta(id: string){
+    this.carritoService.addCarta(id);
+  }
+
 }
-
-

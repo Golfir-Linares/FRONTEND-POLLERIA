@@ -30,6 +30,15 @@
                     <input class="input100" type="text" formControlName="documentType" name="documentType"
                         placeholder="Elige tu Tipo de Documento">
                     <span class="focus-input100"></span>
+                    <!-- ==========
+                    <span class="label-input100">Tipo de Documento</span>
+                    <select class="input100" formControlName="documentType" name="documentType" placeholder="Elige tu Tipo de Documento">
+                        <option *ngFor="let document of documents" [value]="document.type">{{document.type}}</option>
+                        <option value="DNI">DNI</option>
+                        <option value="RUC">RUC</option>
+                        <option value="CE">CE</option>
+                    </select>
+                    ========== -->
                 </div>
                 <div class="wrap-input100 m-b-23">
                     <span class="label-input100">Número de Documento</span>

@@ -14,7 +14,8 @@ export interface ConfirmResponse{
   
 export interface SignupInterface {
     msg:  string;
-    data: Data;
+    token: string;
+    success: boolean;
   }
 
 export interface ForgetPassResponse {

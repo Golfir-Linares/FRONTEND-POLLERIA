@@ -52,6 +52,15 @@ export class ApiService {
     });
     return this.http.get<ProfileInterface>(url, { headers: headers });
   }
+
+  getDocument(token: string):Observable<DocumentType[]>{
+    const url: string = `${this.url}/documents/getDocTypes`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<DocumentType[]>(url,{ headers: headers});
+  } 
   
   sendMail(destinatario: string, asunto: string, mensaje: string, link: string){
     const url: string = `${this.url}/mail/enviar-email`;
