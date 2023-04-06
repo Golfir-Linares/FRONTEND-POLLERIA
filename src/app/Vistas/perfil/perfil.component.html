@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="profile-card p-4">
+        <div class="card-header">
+            <h1 class="card-title">Perfil</h1>
+            <br>
+            <h3 class="card-title mb-2">Nombre: {{perfil.name}}</h3>
+            <h4 class="card-subtitle mb-2 text-muted">Correo: {{perfil.email}}</h4>
+        </div>
+        <div class="card-body">
+            <p *ngIf="perfil.documentType == '63df372107c75b43339e37b0'" class="card-text">Tipo de Documento: RUC</p>
+            <p *ngIf="perfil.documentType == '63df37b67e3125b109088342'" class="card-text">Tipo de Documento: DNI</p>
+            <p *ngIf="perfil.documentType == '63df37ba7e3125b109088344'" class="card-text">Tipo de Documento: CE</p>
+            <p class="card-text">Número de Documento: {{perfil.documentNumber}}</p>
+            <p class="card-text">Dirección: {{perfil.address}}</p>
+            <p>Fecha de Registro: {{perfil.createdAt | date}}</p>
+        </div>
+    </div>
+</div>

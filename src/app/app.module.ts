@@ -18,12 +18,9 @@ import { ConfirmComponent } from './Vistas/confirm/confirm.component';
 import { ForgetpassComponent } from './Vistas/forgetpass/forgetpass.component';
 import { ChangepassComponent } from './Vistas/changepass/changepass.component';
 import { filterPipe } from './Pipe/filter.pipe';
-import { EnsaladasComponent } from './Vistas/cartas/ensaladas/ensaladas.component';
-import { SaltadosComponent } from './Vistas/cartas/saltados/saltados.component';
-import { PollosComponent } from './Vistas/cartas/pollos/pollos.component';
-import { PromocionesComponent } from './Vistas/cartas/promociones/promociones.component';
-import { ChaufaComponent } from './Vistas/cartas/chaufa/chaufa.component';
 import { CarritoComponent } from './Vistas/carrito/carrito.component';
+import { CartaComponent } from './Vistas/carta/carta.component';
+import { PerfilComponent } from './Vistas/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +33,9 @@ import { CarritoComponent } from './Vistas/carrito/carrito.component';
     ConfirmComponent,
     ForgetpassComponent,
     ChangepassComponent,
-    EnsaladasComponent,
-    SaltadosComponent,
-    PollosComponent,
-    PromocionesComponent,
-    ChaufaComponent,
-    CarritoComponent
+    CarritoComponent,
+    CartaComponent,
+    PerfilComponent
     //SingupComponent
     //LoginComponent,
     //MenuComponent

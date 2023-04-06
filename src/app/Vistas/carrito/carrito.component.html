@@ -1,20 +1,19 @@
 <app-header></app-header>
 
-<div class="container-card">
-
-    <div class="card" *ngFor="let data of dataCarta" >
-        <figure>
-            <img [src]="data.imgUrl">
-        </figure>
-        <div class="contenido-card">
-            <h3>{{data.name}}</h3>
-            <p>descripción: {{data.description}}</p>
-            <p>precio: s/{{data.price}}</p>
+<div class="container">
+    <div class="card" *ngFor="let data of dataCarta">
+        <div class="card-image">
+            <img [src]="data.imgUrl" alt="...">
+            <span class="bi bi-x-circle" (click)="removeCarta(data._id)"></span>
+        </div>
+        <div class="card-content">
+            <h3>{{ data.name }}</h3>
+            <p>{{ data.description }}</p>
+            <p>s/ {{ data.price }}</p>
             <p>
                 <label for="quantity">Cantidad: </label>
                 <input class="px-3" type="number" id="quantity" name="quantity" min="1" max="99" value="1">
             </p>
-            <span id="boot-icon" class="bi bi-x-circle delete-btn" style="font-size: 30px; color: rgb(255, 0, 0); opacity: 1; -webkit-text-stroke-width: 2px;" (click)="removeCarta(data._id)"></span>
         </div>
-    </div> 
+    </div>
 </div>

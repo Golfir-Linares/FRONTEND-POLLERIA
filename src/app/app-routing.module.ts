@@ -7,27 +7,21 @@ import { MenuComponent } from './Vistas/menu/menu.component';
 import { ConfirmComponent } from './Vistas/confirm/confirm.component';
 import { ForgetpassComponent } from './Vistas/forgetpass/forgetpass.component';
 import { ChangepassComponent } from './Vistas/changepass/changepass.component';
-import { EnsaladasComponent } from './Vistas/cartas/ensaladas/ensaladas.component';
-import { PollosComponent } from './Vistas/cartas/pollos/pollos.component';
-import { PromocionesComponent } from './Vistas/cartas/promociones/promociones.component';
-import { SaltadosComponent } from './Vistas/cartas/saltados/saltados.component';
-import { ChaufaComponent } from './Vistas/cartas/chaufa/chaufa.component';
 import { CarritoComponent } from './Vistas/carrito/carrito.component';
+import { CartaComponent } from './Vistas/carta/carta.component';
+import { PerfilComponent } from './Vistas/perfil/perfil.component';
 
 
 const routes: Routes = [
 
-  {path:'' , redirectTo:'menu', pathMatch:'full',},
+  {path: '' , redirectTo:'menu', pathMatch:'full',},
   {path: 'menu', component:MenuComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:SingupComponent},
   {path: 'recover', component:ForgetpassComponent},
+  {path: 'perfil', component:PerfilComponent},
   {path: 'categoria', component:CategoriaComponent},
-  {path: 'carta/Ensaladas',component:EnsaladasComponent},
-  {path: 'carta/Chaufas',component:ChaufaComponent}, 
-  {path: 'carta/Pollos',component:PollosComponent},
-  {path: 'carta/Promociones',component:PromocionesComponent},
-  {path: 'carta/Saltados',component:SaltadosComponent},
+  {path: 'carta/:categoria', component: CartaComponent},
   {path: 'confirm/:user_token', component: ConfirmComponent },
   {path: 'verify/:new_user_token', component: ChangepassComponent },
   {path: 'carrito', component:CarritoComponent}

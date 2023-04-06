@@ -6,20 +6,17 @@
 <div class="title-cards">
     <h2>Algunos de nuestros Platos</h2>
 </div>
-<div class="container-card">
 
-    <div class="card" *ngFor="let data of menu" >
-        <figure>
-            <img [src]="data.imgUrl">
-        </figure>
-        <div class="contenido-card">
-            <h3></h3>
-            <p></p>
-            <br>
-            <p></p>
-            <a href="/categoria">Ver mas</a>
+<div class="container">
+    <div class="card" *ngFor="let data of menu">
+        <div class="card-image">
+            <img [src]="data.imgUrl" alt="...">
         </div>
-    </div> 
+        <div class="card-content">
+            <h3>{{ data.description }}</h3>
+            <button href="/categoria">Ver mas</button>
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>

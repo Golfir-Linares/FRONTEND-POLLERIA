@@ -21,7 +21,6 @@ export class CategoriaComponent implements OnInit {
       .subscribe(rs => {
         console.log(rs);
         this.categoria=rs
-        //this.nombrecategoria=rs[0].description
       })
   }
 }

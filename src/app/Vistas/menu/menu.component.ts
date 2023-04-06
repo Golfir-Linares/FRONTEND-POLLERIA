@@ -13,18 +13,12 @@ export class MenuComponent {
   menu:CategoI [] = [];
 
   constructor(private api:CategoriaService, private router:Router){}
+  
   ngOnInit():void{
     this.api.getAllCategoria()
       .subscribe(rs => {
         console.log(rs);
         this.menu=rs
-        //this.nombrecategoria=rs[0].description
       })
   }
-  
-
-  
-  // ng g s servicios/usuario --skip-tests 
-  //
-  //ng g s servicios/categoria/categoria --skip-tests
 }

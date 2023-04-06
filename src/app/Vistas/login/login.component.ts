@@ -34,19 +34,7 @@ export class LoginComponent implements OnInit {
           console.log(resp);
           localStorage.setItem('token', resp.token);
           this.token = resp.token;
-          this.api.getProfile(this.token)
-            .subscribe({
-              next: (resp) => {
-                // console.log(resp);
-                const userRol = resp.roles[0].rol;
-                if(userRol === 'user'){
-                  this.router.navigateByUrl('/menu');
-                }
-              },
-              error: (err) => {
-                console.log(err);
-              }
-            })
+          this.router.navigateByUrl('/menu');
         },
         error: (err) => {
           console.log(err);
@@ -56,44 +44,6 @@ export class LoginComponent implements OnInit {
         }
       })
   }
-  
-  
-  
-  // onLogin(form: any) {
-  //   this.api.loginByEmail(form.value)
-  //    .subscribe({
-  //     next: data => {
-  //       let dataResponse: ResponseTrueI = data;
-  //       console.log(data)
-  //       localStorage.setItem("token", dataResponse.token);
-  //       this.router.navigate(['menu'])
-  //     },
-  //     error: error => {
-  //       const failed = error.error;
-  //       let dataResponse: ResponseFalseI = failed;
-  //       //console.error('There was an error!');
-  //       console.log(dataResponse.msg);
-  //       this.toastr.error(dataResponse.msg, "Error");
-  //     }
-  //    })
-
-
-    /*console.log(form.value);
-    this.api.loginByEmail(form).subscribe((data) => {
-      let dataResponse: ResponseI = data;
-      if (dataResponse.status == 'ok') {
-        localStorage.setItem('token', dataResponse.result.token);
-        this.router.navigate(['menu']);
-      }
-    });
-
-    let dataResponse: ResponseI = form;
-    if (dataResponse.status == 'ok') {
-      localStorage.setItem('token', dataResponse.result.token);
-      this.router.navigate(['menu']);
-    }*/
-
-
-  
+    
 }
 

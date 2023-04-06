@@ -5,13 +5,14 @@ import { CartaI } from 'src/app/Modelos/carta.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class PolloService {
+export class CartaService {
+  
   private url:string = "http://localhost:3500"
 
   constructor(private http:HttpClient) { }
 
-  getAllPollo(){
-    const direccion: string = `${this.url}/carta/getCartByCategory/Pollos`;
+  getAll(componente: string){
+    const direccion: string = `${this.url}/carta/getCartByCategory/`+componente;
     return this.http.get<CartaI[]>(direccion)
   }
 }
