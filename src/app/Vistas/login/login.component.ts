@@ -26,12 +26,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login(){
-    console.log(this.miForm.value);
     const { email, password } = this.miForm.value;
     this.api.login(email,password)
       .subscribe({
         next: (resp: AuthResponse) => {
-          console.log(resp);
+          localStorage.setItem('user_email', email);
           localStorage.setItem('token', resp.token);
           this.token = resp.token;
           this.router.navigateByUrl('/menu');

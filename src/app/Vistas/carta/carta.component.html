@@ -9,7 +9,7 @@
             <h3>{{ data.name }}</h3>
             <p>{{ data.description }}</p>
             <p>s/ {{ data.price }}</p>
-            <button *ngIf="token" type="button" class="add-to-cart"  (click)="addCarta(data._id)">
+            <button *ngIf="token" type="button" class="add-to-cart"  (click)="addCarta(data._id, data.name)">
                 Añadir
             </button>
         </div>

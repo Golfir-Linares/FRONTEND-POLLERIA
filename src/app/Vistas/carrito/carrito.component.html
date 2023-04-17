@@ -1,6 +1,19 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="container" *ngIf="error">
+    <p class="h1 d-flex justify-content-center">{{ error }}</p>
+</div>
+
+<div class="container" *ngIf="!error">
+    <button type="button" class="btn btn-danger p-3" (click)="removeAllCarta()">Limpiar Carrito</button>
+</div>
+
+<div class="container my-2" *ngIf="!error">
+    <span class="inline h2">1. Productos a Comprar</span>
+</div>
+
+<!-- CARDS -->
+<div class="container my-2" *ngIf="!error">
     <div class="card" *ngFor="let data of dataCarta">
         <div class="card-image">
             <img [src]="data.imgUrl" alt="...">
@@ -9,11 +22,96 @@
         <div class="card-content">
             <h3>{{ data.name }}</h3>
             <p>{{ data.description }}</p>
-            <p>s/ {{ data.price }}</p>
+            <p>s/ {{ data.price * data.quantity }}</p>
             <p>
                 <label for="quantity">Cantidad: </label>
-                <input class="px-3" type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+                <input class="px-3" type="number" id="quantity" name="quantity" min="1" max="99" [(ngModel)]="data.quantity" (ngModelChange)="calcularTotal()">
             </p>
+        </div>
+    </div>
+</div>
+
+<!-- ENTREGA -->
+<div class="container my-2" *ngIf="!error">
+    <span class="inline h2">2. Tipo de Entrega</span>
+    <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <label class="input-group-text px-3" for="inputGroupSelect01">Tipo de Entrega: </label>
+        </div>
+        <select class="custom-select px-3" id="inputGroupSelect01" [(ngModel)]="formaEntrega" (ngModelChange)="validateCardData()">
+          <option selected value="Presencial">Recojo en Tienda</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+      </div>
+      <div *ngIf="formaEntrega === 'Delivery'">
+        <div class="form-group mb-3">
+            <label class="h3" for="phone">Teléfono de contacto</label>
+            <input name="phone" type="tel" id="phone" class="form-control form-control-lg" placeholder="Número de teléfono" maxlength="12" [(ngModel)]="phoneNumber" (ngModelChange)="validateCardData()">
+        </div>
+        <div class="form-group mb-3">
+            <label class="h3" for="reference">Referencia del domicilio</label>
+            <input name="reference" type="text" id="reference" class="form-control form-control-lg" placeholder="Referencia (Dirección)" [(ngModel)]="reference" (ngModelChange)="validateCardData()">
+        </div>
+    </div>
+</div>
+
+<!-- TARJETA -->
+<div class="container my-2" *ngIf="!error">
+    <span class="inline h2">3. Metodo de pago</span>
+    <div class="card mt-5 mb-3 px-4 py-3 border rounded box-shadow-sm">
+        <div class="card-header py-2">
+          <div class="accordion-heading" data-toggle="collapse" data-target="#cc-card">
+            <label for="cc" class="d-flex align-items-center">
+              <strong class="d-block mr-3">Tarjeta de crédito</strong>
+              <img src="https://createx.createx.studio/assets/img/ecommerce/checkout/cards.png" width="108" alt="Credit cards">
+            </label>
+          </div>
+        </div>
+        <div class="collapse show" id="cc-card" data-parent="#payment-methods">
+          <div class="card-body pt-3 pb-0">
+            <div class="form-group mb-3">
+              <label for="cc-number">Número de tarjeta</label>
+              <input name="ncard" [(ngModel)]="card_data.ncard" type="text" id="cc-number" class="form-control form-control-lg" data-format="card" placeholder="0000 0000 0000 0000" (maxlength)="16" (ngModelChange)="validateCardData()">
+            </div>
+            <div class="d-flex">
+              <div class="form-group mb-3 mr-3">
+                <label for="cc-exp-date">Expiración</label>
+                <input name="exp" [(ngModel)]="card_data.exp" type="text" id="cc-exp-date" class="form-control form-control-lg" data-format="date" placeholder="mm/yyyy" (ngModelChange)="validateCardData()">
+              </div>
+              <div class="form-group mb-3">
+                <label for="cc-cvc">CVC</label>
+                <input name="cvc" [(ngModel)]="card_data.cvc" type="text" id="cc-cvc" class="form-control form-control-lg" data-format="cvc" placeholder="000" maxlength="4" (ngModelChange)="validateCardData()">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<!-- OBSERVACIÓN -->
+<div class="container my-2" *ngIf="!error">
+    <span class="inline h2">4. OBSERVACIÓN</span>
+    <div class="form-outline my-3 w-100">
+      <textarea class="form-control" id="textAreaExample1" rows="4" 
+                (input)="onObservacionInput($event)" placeholder="Escriba aquí sus observaciones"></textarea>
+    </div>
+</div>
+
+<!-- VENTA -->
+<div class="container my-2" *ngIf="!error">
+    <span class="inline h2">5. REALIZAR COMPRA</span>
+</div>
+<div class="container my-2" *ngIf="!error">
+    <div class="card bg-gradient" style="background-color: blanchedalmond;">
+        <div class="card-content">
+            <h3 class="h3 my-2">Sub total: {{ totalPrice }}</h3>
+            <h3 class="h3 my-2">IGV: {{ totalPrice * 0.18 | number }}</h3>
+            <h3 class="h3 my-2">Precio Total: {{ ((totalPrice*100)/100 * 1.18) | number}}</h3>
+                <button *ngIf="!btn_load" type="button" [disabled]="!isCardDataValid" class="btn btn-primary btn-lg btn-block p-2" (click)="crearOrdenDePedido()">Completar orden</button>
+                <button *ngIf="btn_load" type="button" [disabled]="btn_load" class="btn btn-secondary btn-lg btn-block  p-2">
+                  <span class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>
+                  Procesando...
+                </button>
         </div>
     </div>
 </div>

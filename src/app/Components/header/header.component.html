@@ -11,13 +11,13 @@
           </label>
           <ul class="content_nav">
               <li *ngIf="token"><a routerLink="/carrito"><i class="bi bi-cart4 h3"></i></a></li>
-              <li><a href="/menu">INICIO</a></li>
-              <li><a href="/categoria">CARTA</a></li>
-              <li><a href="#">NOSOTROS</a></li>
-              <li><a href="#">CONTACTO</a></li>
-              <li *ngIf="!token"><a href="/login">LOGIN</a></li>
-              <li *ngIf="token"><a href="/perfil"><i class="bi bi-person"></i>PERFIL</a></li>
-              <li *ngIf="token"><a href="/menu" (click)="logout()"><i class="bi bi-box-arrow-right"></i></a></li>
+              <li><a routerLink="/menu">INICIO</a></li>
+              <li><a routerLink="/categoria">CARTA</a></li>
+              <li><a routerLink="/nosotros">NOSOTROS</a></li>
+              <li><a routerLink="/contacto">CONTACTO</a></li>
+              <li *ngIf="!token"><a routerLink="/login">LOGIN</a></li>
+              <li *ngIf="token"><a routerLink="/perfil"><i class="bi bi-person"></i>PERFIL</a></li>
+              <li *ngIf="token"><a routerLink="/menu" (click)="logout()"><i class="bi bi-box-arrow-right"></i></a></li>
           </ul>
       </nav>
   </div>

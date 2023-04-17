@@ -7,6 +7,7 @@ export interface CartaI {
     imgUrl:      string;
     available:   boolean;
     slug:        string;
+    quantity:    number;
 }
 
 export interface Category {

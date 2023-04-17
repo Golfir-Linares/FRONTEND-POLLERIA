@@ -21,9 +21,9 @@ footer li {
 
 .wrap-footer {
     display: grid;
-    grid-template-columns: 30% 15% 15% 20%;
-    column-gap: 5%;
-    padding: 1rem;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 10%;
+    padding: 1rem 1rem;
     margin: 2rem auto;
     max-width: 1200px;
     color: #f29501;

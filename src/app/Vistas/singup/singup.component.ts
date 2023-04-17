@@ -47,7 +47,6 @@ export class SingupComponent {
         error: (err) => {
           let errorResponse: SignupInterface = err.error;
           this.toastr.error(errorResponse.msg, "Error");
-          console.log(errorResponse.msg)
           localStorage.clear();
         }
       })
@@ -58,7 +57,6 @@ export class SingupComponent {
     .subscribe({
       next:(data)=>{
         this.documents=data
-        console.log(data)
       }
     })
   }

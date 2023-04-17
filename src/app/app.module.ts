@@ -21,6 +21,8 @@ import { filterPipe } from './Pipe/filter.pipe';
 import { CarritoComponent } from './Vistas/carrito/carrito.component';
 import { CartaComponent } from './Vistas/carta/carta.component';
 import { PerfilComponent } from './Vistas/perfil/perfil.component';
+import { ContactoComponent } from './Vistas/contacto/contacto.component';
+import { NosotrosComponent } from './Vistas/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { PerfilComponent } from './Vistas/perfil/perfil.component';
     ChangepassComponent,
     CarritoComponent,
     CartaComponent,
-    PerfilComponent
+    PerfilComponent,
+    ContactoComponent,
+    NosotrosComponent
     //SingupComponent
     //LoginComponent,
     //MenuComponent

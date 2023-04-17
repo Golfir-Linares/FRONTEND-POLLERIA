@@ -25,10 +25,8 @@ export class PerfilComponent {
   }
 
   getPerfil() {
-    console.log(this.token)
     this.api.getProfile(this.token).subscribe({
       next: (resp: ProfileInterface) => {
-        console.log(resp)
         this.perfil = resp;
       },
       error: (err) => {

@@ -19,7 +19,6 @@ export class CategoriaComponent implements OnInit {
   ngOnInit():void{
     this.api.getAllCategoria()
       .subscribe(rs => {
-        console.log(rs);
         this.categoria=rs
       })
   }

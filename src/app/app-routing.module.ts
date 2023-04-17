@@ -10,6 +10,8 @@ import { ChangepassComponent } from './Vistas/changepass/changepass.component';
 import { CarritoComponent } from './Vistas/carrito/carrito.component';
 import { CartaComponent } from './Vistas/carta/carta.component';
 import { PerfilComponent } from './Vistas/perfil/perfil.component';
+import { ContactoComponent } from './Vistas/contacto/contacto.component';
+import { NosotrosComponent } from './Vistas/nosotros/nosotros.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path: 'carta/:categoria', component: CartaComponent},
   {path: 'confirm/:user_token', component: ConfirmComponent },
   {path: 'verify/:new_user_token', component: ChangepassComponent },
-  {path: 'carrito', component:CarritoComponent}
+  {path: 'carrito', component:CarritoComponent},
+  {path: 'contacto', component:ContactoComponent},
+  {path: 'nosotros', component:NosotrosComponent}
 
 ];
 

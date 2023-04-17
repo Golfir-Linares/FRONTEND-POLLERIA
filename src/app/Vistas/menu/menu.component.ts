@@ -17,7 +17,6 @@ export class MenuComponent {
   ngOnInit():void{
     this.api.getAllCategoria()
       .subscribe(rs => {
-        console.log(rs);
         this.menu=rs
       })
   }
