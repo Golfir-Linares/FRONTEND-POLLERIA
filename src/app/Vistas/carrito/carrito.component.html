@@ -105,8 +105,8 @@
     <div class="card bg-gradient" style="background-color: blanchedalmond;">
         <div class="card-content">
             <h3 class="h3 my-2">Sub total: {{ totalPrice }}</h3>
-            <h3 class="h3 my-2">IGV: {{ totalPrice * 0.18 | number }}</h3>
-            <h3 class="h3 my-2">Precio Total: {{ ((totalPrice*100)/100 * 1.18) | number}}</h3>
+            <h3 class="h3 my-2">IGV: {{ totalPrice * 0.18 | number:'1.2-2' }}</h3>
+            <h3 class="h3 my-2">Precio Total: {{ ((totalPrice*100)/100 * 1.18) | number:'1.2-2'}}</h3>
                 <button *ngIf="!btn_load" type="button" [disabled]="!isCardDataValid" class="btn btn-primary btn-lg btn-block p-2" (click)="crearOrdenDePedido()">Completar orden</button>
                 <button *ngIf="btn_load" type="button" [disabled]="btn_load" class="btn btn-secondary btn-lg btn-block  p-2">
                   <span class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>

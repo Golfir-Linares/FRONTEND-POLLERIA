@@ -158,9 +158,9 @@ export class CarritoComponent {
     };
     setTimeout(() => {
       this.pedidoService.get_token_culqi(data).subscribe((response) => {
-        console.log((this.totalPrice*1.18)*100)
+        console.log(((this.totalPrice*1.18)*100).toFixed(0))
         let charge = {
-          amount: (this.totalPrice*1.18)*100,
+          amount: ((this.totalPrice*1.18)*100).toFixed(0),
           currency_code: 'PEN',
           email: this.user_email,
           source_id: response.id,
@@ -250,7 +250,8 @@ export class CarritoComponent {
     }, 300); 
 
     setTimeout(() => {
-      localStorage.removeItem('idCarta');
-    }, 1500);
+      //this.removeAllCarta();
+      localStorage.setItem('idCarta', '[]');
+    }, 2000);
   }
 }
