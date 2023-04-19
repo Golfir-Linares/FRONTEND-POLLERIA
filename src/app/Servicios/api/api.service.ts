@@ -10,7 +10,7 @@ import { AuthResponse} from '../../Modelos/auth.interface'
 })
 export class ApiService {
 
-  private url:string = "http://localhost:3500";
+  private url:string = "https://a-osrestapi-production.up.railway.app";
 
   constructor( private http:HttpClient) { }
 

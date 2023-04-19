@@ -7,7 +7,7 @@ import { CartaI } from 'src/app/Modelos/carta.interface';
 })
 export class CartaService {
   
-  private url:string = "http://localhost:3500"
+  private url:string = "https://a-osrestapi-production.up.railway.app"
 
   constructor(private http:HttpClient) { }
 

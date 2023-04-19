@@ -8,7 +8,7 @@ import { CarritoResponse } from 'src/app/Modelos/pedido.interface';
 })
 export class CarritoService {
   
-  private url:string = "http://localhost:3500"
+  private url:string = "https://a-osrestapi-production.up.railway.app"
   cartas: string[] = [];
 
   constructor(private http:HttpClient) {

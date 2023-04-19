@@ -6,7 +6,7 @@ import { CategoI } from 'src/app/Modelos/categoria.interface';
   providedIn: 'root'
 })
 export class CategoriaService {
-  private url:string = "http://localhost:3500";
+  private url:string = "https://a-osrestapi-production.up.railway.app";
 
   constructor(private http:HttpClient) { }
 
