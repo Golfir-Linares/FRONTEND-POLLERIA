@@ -8,7 +8,7 @@ import { CartaPedido, FinalizedOrderResponse, Pedido, PedidoResponse } from 'src
 })
 export class PedidoService {
 
-  private url:string = "https://a-osrestapi-production.up.railway.app/"
+  private url:string = "https://a-osrestapi-production.up.railway.app"
   private urlCulqi:string = "https://secure.culqi.com/v2"
   cartas: string[] = [];
 

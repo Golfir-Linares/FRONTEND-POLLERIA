@@ -78,16 +78,13 @@ export class CarritoComponent {
         .subscribe({
           next: (resp: CarritoResponse) => {
             this.toastr.info("Producto eliminado. "+resp.message , "Info");
+            this.getCarrito();
           },
           error: (err) => {
             this.toastr.error(err.error.msg, "Error");
           },
         });
     }, 80);
-
-    setTimeout(() => {
-      this.getCarrito();
-    }, 200);
 
     setTimeout(() => {
       this.calcularTotal();
@@ -103,13 +100,10 @@ export class CarritoComponent {
       this.carritoService.saveCarritoToUser([], this.token).subscribe({
         next: (resp: CarritoResponse) => {
           this.toastr.info("Productos eliminados. "+resp.message, "Info");
+          this.getCarrito();
         },
       });
     }, 50);
-
-    setTimeout(() => {
-      this.getCarrito();
-    }, 200);
   }
 
   getCarrito() {
@@ -143,7 +137,6 @@ export class CarritoComponent {
     } else{
       this.isCardDataValid = false;
     }
-    
   }
 
   peticionesCulqi() {
@@ -236,6 +229,7 @@ export class CarritoComponent {
         .subscribe(
           (res: PedidoResponse) => {
             this.orderId = res.orderId;
+            localStorage.setItem('idCarta', '[]');
             console.log(this.orderId)
           },
           (err) => {
@@ -248,10 +242,5 @@ export class CarritoComponent {
     setTimeout(() => {
       this.peticionesCulqi();
     }, 300); 
-
-    setTimeout(() => {
-      //this.removeAllCarta();
-      localStorage.setItem('idCarta', '[]');
-    }, 2000);
   }
 }
